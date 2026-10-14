@@ -20,7 +20,9 @@ def add_grade(student_id, mark, grade_list=None):
         return False
 
     gradebook[student_id]["marks"].append(mark)
-    grade_list.append(f"Recorded score {mark} for student id {student_id}")
+    grade_list.append(
+        f"Recorded score {mark} for student id {student_id}"
+    )
     return True
 
 
@@ -40,7 +42,7 @@ def check_passing_status(student_id, pass_threshold=50.0):
     if student is None or not student["marks"]:
         return False
 
-    average = sum(student["marks"]) / len(student["marks"])  # Calculate the average marks for the student
+    average = sum(student["marks"]) / len(student["marks"])
     return average >= pass_threshold
 
 
@@ -51,7 +53,7 @@ def compute_weighted_gpa(student_id):
     if student is None or not student["marks"]:
         return None
 
-    average_score = sum(student["marks"]) / len(student["marks"])  # Calculate the average score used for GPA
+    average_score = sum(student["marks"]) / len(student["marks"])
     return average_score / 20.0
 
 
