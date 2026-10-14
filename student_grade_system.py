@@ -1,4 +1,3 @@
-
 """Student academic grading management module."""
 
 import hashlib
